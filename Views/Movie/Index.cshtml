@@ -1,0 +1,16 @@
+@model List<Movie>
+
+<div class="text-center">
+    <h1 class="display-4">@ViewData["TitleHome"]</h1>
+    <p>Top 10 mejores Peliculas de Herramientas de Programacion.</p>
+</div>
+
+<ol>
+    @foreach (var item in Model)
+    {
+        //En cada elemento que tengamos en la lista generamos un enlace hacia la accion detail que luego en la accion del controll recibe como parametro y con el servicio traemos el elemnto, la cual se la mandamos a la vista
+        <li><a asp-action="Detail" asp-route-id="@item.Code">@item.Name</a></li>
+    }
+</ol>
+
+<a asp-action="Create">Nueva Pelicula ACA</a>

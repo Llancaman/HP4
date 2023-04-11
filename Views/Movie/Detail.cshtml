@@ -1,0 +1,13 @@
+@model Movie
+
+<h2>@Model.Name</h2>
+
+<p>Duracion: @Model.Minutes</p>
+
+<p>@Model.Review</p>
+
+<form 
+    method="post" action="@(Url.Action("Delete","Movie"))">
+    <input asp-for="@Model.Code" hidden>
+    <button type="submit" class="btn btn-danger">Eliminar</button>
+</form>
